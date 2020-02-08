@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="javatunesDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="org.apache.derby.jdbc.ClientDriver"/>
+        <property name="url" value="jdbc:derby://localhost:1527/sample"/>
+        <property name="username" value="app"/>
+        <property name="password" value="app"/>
+    </bean>
+
+    <bean id="javatunesSessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <property name="dataSource" ref="javatunesDataSource"/>
+
+        <property name="mappingResources">
+            <list>
+                <value>ru/lionsoft/hello/spring/persist/entity/MusicItem.hbm.xml</value>
+            </list>
+        </property>
+		
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.DerbyDialect</prop>
+                <prop key="hibernate.connection.pool_size">1</prop>
+      
+                <!-- Disable the second-level cache  -->
+                <prop key="hibernate.cache.provider_class">org.hibernate.cache.NoCacheProvider</prop>
+
+                <!-- Echo all executed SQL to stdout -->
+                <prop key="hibernate.show_sql">true</prop>     
+
+                <!-- Use Thread local contextual sessions -->             
+                <prop key="hibernate.current_session_context_class">thread</prop>
+				
+            </props>
+        </property>
+		
+    </bean>
+
+    <bean id="musicItemDAO" class="ru.lionsoft.hello.spring.persist.lab07_1.HibernateMusicItemDAO">
+        <property name="sessionFactory" ref="javatunesSessionFactory"/>
+    </bean>
+
+</beans>

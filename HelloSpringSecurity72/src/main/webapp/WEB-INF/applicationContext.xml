@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+
+    <bean id="javaTunesCatalog" class="ru.lionsoft.hello.spring.web.catalog.JavaTunesCatalog">
+        <constructor-arg ref="inMemoryItemDAO"/>
+        <property name="maxSearchResults" value="20"/>
+    </bean>
+
+    <security:http auto-config="true" use-expressions="true">
+        <!-- 
+            Spring Security 5+ use expressions: 
+            hasRole, hasAnyRole, hasAuthority, hasAnyAuthority, permitAll, denyAll, 
+            isAnonymous, isRememberMe, sAuthenticated, isFullyAuthenticated
+        -->
+        <security:intercept-url pattern="/**" access="hasAnyRole('ROLE_USER','ROLE_ADMIN')" />
+    </security:http>
+
+    <security:authentication-manager>
+        <security:authentication-provider>
+            <security:user-service>
+                <!-- Spring Security 5+ add to password {noop} for plain password -->
+                <security:user name="admin" password="{noop}admin@password" authorities="ROLE_ADMIN" />
+                <security:user name="user" password="{noop}user@password" authorities="ROLE_USER" />
+            </security:user-service>
+        </security:authentication-provider>
+    </security:authentication-manager>
+
+    <security:global-method-security secured-annotations="enabled" jsr250-annotations="enabled"/>
+
+</beans>
+

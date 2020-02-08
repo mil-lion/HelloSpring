@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <bean id="springBook" 
+          class="ru.lionsoft.hello.spring.context.lab02_4.SpringCourseBook" />
+    
+    <bean id="javaBook" 
+          class="ru.lionsoft.hello.spring.context.lab02_4.JavaCourseBook" />
+    
+    <bean id="seniorJavaInstructor" 
+          class="ru.lionsoft.hello.spring.context.lab02_4.JavaInstructor" >
+        <property name="infoSources">
+            <set>
+                <ref bean="springBook"/>
+                <ref bean="javaBook"/>
+            </set>
+        </property>
+        <property name="favoriteTopics">
+            <list>
+                <value>Spring</value>
+                <value>Java</value>
+                <value>Hibernate</value>
+            </list>
+        </property>
+        <property name="subject" value="#{javaBook.getData()}" />
+        <property name="age" value="#{T(ru.lionsoft.hello.spring.context.lab02_4.JavaInstructor).randomAge()}" />
+    </bean>
+    
+    <!-- Inherit definitions from parent -->
+    <bean id="springGuru" parent="seniorJavaInstructor">
+        <!-- Override this property -->
+        <property name="favoriteTopics"> 
+            <set>
+                <value>Spring</value>
+            </set>
+        </property>
+        <property name="subject" value="#{springBook.data}" />
+        <property name="age" value="35"/>
+    </bean>
+</beans>

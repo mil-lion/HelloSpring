@@ -1,0 +1,46 @@
+# Gradle
+build
+gradle.properties
+.gradle
+local.properties
+out
+
+# Maven (examples)
+target
+
+# Bazel
+bazel-bin
+bazel-examples
+bazel-genfiles
+bazel-grpc-java
+bazel-out
+bazel-testlogs
+
+# IntelliJ IDEA
+.idea
+*.iml
+*.ipr
+*.iws
+
+# Eclipse
+.classpath
+.project
+.settings
+#.gitignore
+bin
+
+# NetBeans
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+nb-configuration.xml
+
+# OS X
+.DS_Store
+
+# Emacs
+*~
+\#*\#

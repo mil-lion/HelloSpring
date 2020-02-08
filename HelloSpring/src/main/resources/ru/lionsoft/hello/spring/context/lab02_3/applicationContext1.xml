@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <bean id="springBook" 
+          class="ru.lionsoft.hello.spring.context.lab02_3.SpringCourseBook" />
+    
+    <bean id="springGuru" 
+          class="ru.lionsoft.hello.spring.context.lab02_3.JavaInstructor" >
+        <property name="info" ref="springBook" />
+    </bean>
+</beans>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="inMemoryItemDAO" class="ru.lionsoft.hello.spring.context.lab03_2.InMemoryItemDAO">
+        <constructor-arg>
+            <list>
+                <bean id="mi1" class="ru.lionsoft.hello.spring.context.entity.MusicItem">
+                    <constructor-arg value="1"/>
+                    <property name="num" value="CD501"/>
+                    <property name="title" value="Diva"/>
+                    <property name="artist" value="Annie Lennox"/>
+                    <property name="releaseDateString" value="1992-01-04"/>
+                    <property name="listPrice" value="17.97"/>
+                    <property name="price" value="13.99"/>
+                </bean>
+                <bean id="mi2" class="ru.lionsoft.hello.spring.context.entity.MusicItem">
+                    <constructor-arg value="2"/>
+                    <property name="num" value="CD502"/>
+                    <property name="title" value="Dream of the Blue Turtles"/>
+                    <property name="artist" value="Sting"/>
+                    <property name="releaseDateString" value="1985-02-05"/>
+                    <property name="listPrice" value="17.97"/>
+                    <property name="price" value="14.99"/>
+                </bean>
+                <bean id="mi3" class="ru.lionsoft.hello.spring.context.entity.MusicItem">
+                    <constructor-arg value="3"/>
+                    <property name="num" value="CD503"/>
+                    <property name="title" value="Trouble is..."/>
+                    <property name="artist" value="Kenny Wayne Shepherd Band"/>
+                    <property name="releaseDateString" value="1997-08-08"/>
+                    <property name="listPrice" value="17.97"/>
+                    <property name="price" value="14.99"/>
+                </bean>
+                <bean id="mi4" class="ru.lionsoft.hello.spring.context.entity.MusicItem">
+                    <constructor-arg value="4"/>
+                    <property name="num" value="CD504"/>
+                    <property name="title" value="Lie to Me"/>
+                    <property name="artist" value="Jonny Lang"/>
+                    <property name="releaseDateString" value="1997-08-26"/>
+                    <property name="listPrice" value="17.97"/>
+                    <property name="price" value="14.99"/>
+                </bean>
+                <bean id="mi5" class="ru.lionsoft.hello.spring.context.entity.MusicItem">
+                    <constructor-arg value="5"/>
+                    <property name="num" value="CD505"/>
+                    <property name="title" value="Little Earthquakes"/>
+                    <property name="artist" value="Tori Amos"/>
+                    <property name="releaseDateString" value="1992-01-18"/>
+                    <property name="listPrice" value="17.97"/>
+                    <property name="price" value="14.99"/>
+                </bean>
+                <bean id="mi6" class="ru.lionsoft.hello.spring.context.entity.MusicItem">
+                    <constructor-arg value="6"/>
+                    <property name="num" value="CD506"/>
+                    <property name="title" value="Seal"/>
+                    <property name="artist" value="Seal"/>
+                    <property name="releaseDateString" value="1991-08-18"/>
+                    <property name="listPrice" value="17.97"/>
+                    <property name="price" value="14.99"/>
+                </bean>
+                <bean id="mi7" class="ru.lionsoft.hello.spring.context.entity.MusicItem">
+                    <constructor-arg value="7"/>
+                    <property name="num" value="CD507"/>
+                    <property name="title" value="Ian Moore"/>
+                    <property name="artist" value="Ian Moore"/>
+                    <property name="releaseDateString" value="1993-12-05"/>
+                    <property name="listPrice" value="9.97"/>
+                    <property name="price" value="9.97"/>
+                </bean>
+                <bean id="mi8" class="ru.lionsoft.hello.spring.context.entity.MusicItem">
+                    <constructor-arg value="8"/>
+                    <property name="num" value="CD508"/>
+                    <property name="title" value="So Much for the Afterglow"/>
+                    <property name="artist" value="Everclear"/>
+                    <property name="releaseDateString" value="1997-01-19"/>
+                    <property name="listPrice" value="16.97"/>
+                    <property name="price" value="13.99"/>
+                </bean>
+                <bean id="mi9" class="ru.lionsoft.hello.spring.context.entity.MusicItem">
+                    <constructor-arg value="9"/>
+                    <property name="num" value="CD509"/>
+                    <property name="title" value="Surfacing"/>
+                    <property name="artist" value="Sarah McLachlan"/>
+                    <property name="releaseDateString" value="1997-12-04"/>
+                    <property name="listPrice" value="17.97"/>
+                    <property name="price" value="13.99"/>
+                </bean>
+                <bean id="mi10" class="ru.lionsoft.hello.spring.context.entity.MusicItem">
+                    <constructor-arg value="10"/>
+                    <property name="num" value="CD510"/>
+                    <property name="title" value="Hysteria"/>
+                    <property name="artist" value="Def Leppard"/>
+                    <property name="releaseDateString" value="1987-06-20"/>
+                    <property name="listPrice" value="17.97"/>
+                    <property name="price" value="14.99"/>
+                </bean>
+                <bean id="mi11" class="ru.lionsoft.hello.spring.context.entity.MusicItem">
+                    <constructor-arg value="11"/>
+                    <property name="num" value="CD511"/>
+                    <property name="title" value="A Life of Saturdays"/>
+                    <property name="artist" value="Dexter Freebish"/>
+                    <property name="releaseDateString" value="2000-12-06"/>
+                    <property name="listPrice" value="16.97"/>
+                    <property name="price" value="12.99"/>
+                </bean>
+                <bean id="mi12" class="ru.lionsoft.hello.spring.context.entity.MusicItem">
+                    <constructor-arg value="12"/>
+                    <property name="num" value="CD512"/>
+                    <property name="title" value="Human Clay"/>
+                    <property name="artist" value="Creed"/>
+                    <property name="releaseDateString" value="1999-10-21"/>
+                    <property name="listPrice" value="18.97"/>
+                    <property name="price" value="13.28"/>
+                </bean>
+                <bean id="mi13" class="ru.lionsoft.hello.spring.context.entity.MusicItem">
+                    <constructor-arg value="13"/>
+                    <property name="num" value="CD513"/>
+                    <property name="title" value="My, I'm Large"/>
+                    <property name="artist" value="Bobs"/>
+                    <property name="releaseDateString" value="1987-02-20"/>
+                    <property name="listPrice" value="11.97"/>
+                    <property name="price" value="11.97"/>
+                </bean>
+                <bean id="mi14" class="ru.lionsoft.hello.spring.context.entity.MusicItem">
+                    <constructor-arg value="14"/>
+                    <property name="num" value="CD514"/>
+                    <property name="title" value="So"/>
+                    <property name="artist" value="Peter Gabriel"/>
+                    <property name="releaseDateString" value="1986-10-03"/>
+                    <property name="listPrice" value="17.97"/>
+                    <property name="price" value="13.99"/>
+                </bean>
+                <bean id="mi15" class="ru.lionsoft.hello.spring.context.entity.MusicItem">
+                    <constructor-arg value="15"/>
+                    <property name="num" value="CD515"/>
+                    <property name="title" value="Big Ones"/>
+                    <property name="artist" value="Aerosmith"/>
+                    <property name="releaseDateString" value="1994-05-08"/>
+                    <property name="listPrice" value="18.97"/>
+                    <property name="price" value="14.99"/>
+                </bean>
+                <bean id="mi16" class="ru.lionsoft.hello.spring.context.entity.MusicItem">
+                    <constructor-arg value="16"/>
+                    <property name="num" value="CD516"/>
+                    <property name="title" value="90125"/>
+                    <property name="artist" value="Yes"/>
+                    <property name="releaseDateString" value="1983-10-16"/>
+                    <property name="listPrice" value="11.97"/>
+                    <property name="price" value="11.97"/>
+                </bean>
+                <bean id="mi17" class="ru.lionsoft.hello.spring.context.entity.MusicItem">
+                    <constructor-arg value="17"/>
+                    <property name="num" value="CD517"/>
+                    <property name="title" value="1984"/>
+                    <property name="artist" value="Van Halen"/>
+                    <property name="releaseDateString" value="1984-08-19"/>
+                    <property name="listPrice" value="11.97"/>
+                    <property name="price" value="11.97"/>
+                </bean>
+                <bean id="mi18" class="ru.lionsoft.hello.spring.context.entity.MusicItem">
+                    <constructor-arg value="18"/>
+                    <property name="num" value="CD518"/>
+                    <property name="title" value="Escape"/>
+                    <property name="artist" value="Journey"/>
+                    <property name="releaseDateString" value="1981-02-25"/>
+                    <property name="listPrice" value="11.97"/>
+                    <property name="price" value="11.97"/>
+                </bean>	
+            </list>
+        </constructor-arg>
+    </bean>
+
+</beans>
