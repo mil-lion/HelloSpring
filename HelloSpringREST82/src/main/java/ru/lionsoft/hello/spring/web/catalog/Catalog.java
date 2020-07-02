@@ -17,5 +17,5 @@ public interface Catalog {
 
     public Collection<MusicItem> findByKeyword(String keyword);
 
-   public Collection<MusicItem> getAll();
+    public Collection<MusicItem> getAll();
 }
