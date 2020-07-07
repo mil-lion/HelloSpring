@@ -29,7 +29,7 @@
         </constructor-arg>
     </bean>
 	
-    <bean id="javaTunesCatalog" class="ru.lionsoft.hello.spring.context.lab02_2.JavaTunesCatalog" init-method="init">
+    <bean id="javaTunesCatalog" class="ru.lionsoft.hello.spring.context.lab02_2.JavaTunesCatalog">
         <constructor-arg ref="inMemoryItemDAO"/>
         <property name="maxSearchResults" value="5"/>
     </bean>

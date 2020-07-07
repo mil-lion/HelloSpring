@@ -36,12 +36,6 @@ public class JavaTunesCatalog implements Catalog {
         dao = daoIn;
     }
 
-    // ***************** Bean Lifecycle Callback ******************
-    
-    public void init() {
-        System.out.println("\n@@@@ JavaTunesCatalog.init() called");
-    }
-
     // ****************** Business Methods ********************
     
     @Override

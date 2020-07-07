@@ -14,7 +14,7 @@ import static ru.lionsoft.hello.spring.util.PathUtil.path;
 
 public class JavaTunes {
 
-    public static final String APPLICATION_CONTEXT = path(JavaTunes.class, "applicationContext.xml");
+    private static final String APPLICATION_CONTEXT = path(JavaTunes.class, "applicationContext.xml");
 
     public static void main(String[] args) {
         System.out.println("We're ready to learn Spring");
