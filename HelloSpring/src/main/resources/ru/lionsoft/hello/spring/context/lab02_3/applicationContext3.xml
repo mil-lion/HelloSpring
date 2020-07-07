@@ -11,7 +11,9 @@
     
     <bean id="springGuru" 
           class="ru.lionsoft.hello.spring.context.lab02_3.JavaInstructor" 
-          factory-bean="myFactory" factory-method="createJavaInstructor" >
+          factory-bean="myFactory" 
+          factory-method="createJavaInstructor" 
+    >
         <property name="info" ref="springBook" />
     </bean>
 </beans>

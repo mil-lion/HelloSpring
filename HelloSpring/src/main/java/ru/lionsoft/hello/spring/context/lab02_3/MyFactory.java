@@ -16,7 +16,16 @@ public class MyFactory {
     
     public Teacher createJavaInstructor() {
         System.out.println("\n@@@@ MyFactory.createJavaInstructor()!!!");
-        return new JavaInstructor();
+        JavaInstructor instructor = new JavaInstructor();
+        instructor.setInfo(new JavaCourseBook());
+        return instructor;
+    }
+    
+    public Teacher createSpringInstructor() {
+        System.out.println("\n@@@@ MyFactory.createSpringInstructor()!!!");
+        JavaInstructor instructor = new JavaInstructor();
+        instructor.setInfo(new SpringCourseBook());
+        return instructor;
     }
     
 }

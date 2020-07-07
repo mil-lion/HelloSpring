@@ -6,9 +6,6 @@
     <bean id="springBook" 
           class="ru.lionsoft.hello.spring.context.lab02_3.SpringCourseBook" />
     
-    <bean id="myFactory"
-          class="ru.lionsoft.hello.spring.context.lab02_3.MyFactory" />
-    
     <bean id="springGuru" 
           class="ru.lionsoft.hello.spring.context.lab02_3.JavaInstructor" 
           factory-method="getInstance" >
