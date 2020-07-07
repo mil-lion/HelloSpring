@@ -12,15 +12,14 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 
 /**
- *
+ * Bean Post Processor (Interceptor)
  * @author Igor Morenko <morenko at lionsoft.ru>
  */
 public class CustomBeanPostProcessor 
         implements BeanPostProcessor // for intercept before/after invoke method init() for beans
-
 {
     
-    // Implements interface BeanPostProcessors
+    // ************** Implements interface BeanPostProcessors *****************
 
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {

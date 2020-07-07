@@ -26,10 +26,10 @@ import ru.lionsoft.hello.spring.context.entity.MusicItem;
 
 // TODO - Make sure JavaTunesCatalog implements Catalog
 public class JavaTunesCatalog 
-        implements Catalog, // business interface 
-            BeanNameAware, // for get bean name
-            BeanFactoryAware, // for get ref on BeanFactory
-            ApplicationContextAware, // for get ref on ApplicationContext
+        implements Catalog, // Business Interface 
+            BeanNameAware, // Inject Bean Name
+            BeanFactoryAware, // Inject Bean Factory
+            ApplicationContextAware, // Inject ApplicationContext
             InitializingBean, // for method afterPropertiesSet()
             DisposableBean, // for bean destruction - method destroy()
             ApplicationListener<ApplicationEvent> // for events
@@ -39,6 +39,7 @@ public class JavaTunesCatalog
     private ItemDAO dao;
 
     public void setDao(ItemDAO dao) {
+        System.out.println("\n@@@@ JavaTunesCatalog.setDao()");
         this.dao = dao;
     }
     
@@ -82,7 +83,9 @@ public class JavaTunesCatalog
 
     // ************** Bean Lyfecycle Callback ****************
     
-    // Constructor
+    // ============== Bean Creation Lifecycle ================
+    
+    // 1. Instantiate (Constructor)
     public JavaTunesCatalog() {
         System.out.println("\n@@@@ Constructor JavaTunesCatalog()");
         System.out.println("dao = " + dao);
@@ -92,32 +95,11 @@ public class JavaTunesCatalog
         System.out.println("ctx = " + ctx);
     }
     
-    // Constructor after injection
-    public void init() {
-        System.out.println("\n@@@@ JavaTunesCatalog.init()");
-        System.out.println("dao = " + dao);
-        System.out.println("maxSearchResults = " + maxSearchResults);
-        System.out.println("beanName = " + beanName);
-        System.out.println("beanFactory = " + beanFactory);
-        System.out.println("ctx = " + ctx);
-    }
+    // 2. Populate Properties
     
-    public void cleanup() {
-        System.out.println("\n@@@@ JavaTunesCatalog.cleanup()");
-    }
-    
-    @PostConstruct
-    public void alterCreate() {
-        System.out.println("\n@@@@ JavaTunesCatalog.afterCreate()");
-    } 
-    
-    @PreDestroy
-    public void beforeDelete() {
-        System.out.println("\n@@@@ JavaTunesCatalog.beforeDelete()");
-    }
-
     // Implements interface BeanNameAware
     
+    // 3. Inject Bean Name
     private String beanName;
     
     @Override
@@ -128,6 +110,7 @@ public class JavaTunesCatalog
 
     // Implements interface BeanFactoryAware
     
+    // 4. Inject Bean Factory
     private BeanFactory beanFactory;
     
     @Override
@@ -138,6 +121,7 @@ public class JavaTunesCatalog
 
     // Implements interface ApplicationContextAware
     
+    // 5. Inject Application Context
     private ApplicationContext ctx;
     
     @Override
@@ -146,20 +130,54 @@ public class JavaTunesCatalog
         ctx = applicationContext;
     }
     
+    // 6. BeanPostProcessor.postProcessBeforeInitialization()
+    
     // Implements interface InitializingBean
     
+    // 7. InitializingBean.afterPropertiesSet() or @PostConstruct
     @Override
     public void afterPropertiesSet() throws Exception {
         System.out.println("\n@@@@ JavaTunesCatalog.afterPropertiesSet()");
     }    
 
+    @PostConstruct
+    public void alterCreate() {
+        System.out.println("\n@@@@ JavaTunesCatalog.afterCreate()");
+    } 
+
+    // Constructor after injection
+    // 8. init-method
+    public void init() {
+        System.out.println("\n@@@@ JavaTunesCatalog.init()");
+        System.out.println("dao = " + dao);
+        System.out.println("maxSearchResults = " + maxSearchResults);
+        System.out.println("beanName = " + beanName);
+        System.out.println("beanFactory = " + beanFactory);
+        System.out.println("ctx = " + ctx);
+    }
+ 
+    // 9. BeanPostProcessor.postProcessAfterInitialization()
+
+    // ============== Bean Destruction Lifecycle ================
+
     // Implements interface DesposableBean
     
+    // 1. DisposableBean.destroy() or @PreDestroy
     @Override
     public void destroy() throws Exception {
         System.out.println("\n@@@@ JavaTunesCatalog.destroy()");
     }
+ 
+    @PreDestroy
+    public void beforeDelete() {
+        System.out.println("\n@@@@ JavaTunesCatalog.beforeDelete()");
+    }
 
+    // 2. destroy-method
+    public void cleanup() {
+        System.out.println("\n@@@@ JavaTunesCatalog.cleanup()");
+    }
+    
     // ************** Events ********************
     
     // Implements interface ApplicationListener
