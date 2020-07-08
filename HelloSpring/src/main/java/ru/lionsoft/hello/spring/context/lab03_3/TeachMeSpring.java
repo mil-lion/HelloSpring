@@ -8,6 +8,7 @@
  */
 package ru.lionsoft.hello.spring.context.lab03_3;
 
+import java.util.stream.Stream;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import static ru.lionsoft.hello.spring.util.PathUtil.path;
 
@@ -22,6 +23,9 @@ public class TeachMeSpring {
         Teacher teacher = ctx.getBean("springGuru", Teacher.class);
         teacher.teach();
         
+        System.out.println("\n*** Listing of all bean names:");
+        Stream.of(ctx.getBeanDefinitionNames()).forEach(System.out::println);
+
         ctx.close();  // Close the context
         System.out.println("\nApplicationContext closed");
     }

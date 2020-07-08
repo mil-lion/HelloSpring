@@ -19,6 +19,6 @@ public class JavaCourseBook implements InfoSource {
 
     @Override
     public String getData() {
-        return "Java rulez!";
+        return "Java for Professional!";
     }
 }

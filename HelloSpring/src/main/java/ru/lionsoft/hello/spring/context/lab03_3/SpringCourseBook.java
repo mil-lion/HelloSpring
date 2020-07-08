@@ -14,13 +14,13 @@ import org.springframework.stereotype.Component;
 // TODO - import Component
 
 // TODO - Add Component annotation
-@Component("springBook")
+@Component
 @Qualifier("Java") // Optional Qualifier part
 @Scope("prototype")
 public class SpringCourseBook implements InfoSource {
 
     @Override
     public String getData() {
-        return "Dependencies are not so cool";
+        return "Spring - Dependencies are not so cool (" + Integer.toHexString(hashCode()) + ")";
     }
 }

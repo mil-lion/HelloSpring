@@ -11,7 +11,7 @@ package ru.lionsoft.hello.spring.context.lab03_3;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-@Component("scalaBook")  // For optional qualifier part
+@Component  // For optional qualifier part
 @Qualifier("Scala")
 public class ScalaCourseBook implements InfoSource {
 
