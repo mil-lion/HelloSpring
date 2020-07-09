@@ -20,5 +20,7 @@ public interface MusicItemDAO {
 
     void create(MusicItem item);
 
+    void update(MusicItem item);
+
     void delete(MusicItem item);
 }

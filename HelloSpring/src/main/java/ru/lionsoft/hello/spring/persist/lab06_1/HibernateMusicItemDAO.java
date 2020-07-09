@@ -16,21 +16,30 @@ import ru.lionsoft.hello.spring.persist.entity.MusicItem;
 
 public class HibernateMusicItemDAO implements MusicItemDAO {
 
-    private SessionFactory sessionFactory;
+    private final SessionFactory sessionFactory;
 
-    public void setSessionFactory(SessionFactory sf) {
-        sessionFactory = sf;
+    // Constructor Injection
+    public HibernateMusicItemDAO(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
     }
 
-    public SessionFactory getSessionFactory() {
-        return sessionFactory;
+    // ******************* Business Methods *****************
+    
+    @Override
+    public MusicItem searchById(Long id) {
+        return sessionFactory.getCurrentSession().get(MusicItem.class, id);
     }
 
     @Override
-    public MusicItem searchById(Long id) {
-        Session s = getSessionFactory().getCurrentSession();
-        MusicItem ret = (MusicItem) s.get(MusicItem.class, id);
-        return ret;
+    public Collection<MusicItem> searchByKeyword(String keyword) {
+        // create the %keyword% wildcard syntax used in SQL LIKE operator
+        String wildcarded = "%" + keyword + "%";
+        // TODO: create query 
+        return sessionFactory.getCurrentSession()
+                .createQuery("SELECT mi FROM MusicItem mi "
+                        + "WHERE mi.title LIKE :keyword OR mi.artist LIKE :keyword")
+                .setParameter("keyword", wildcarded)
+                .getResultList();
     }
 
     @Override
@@ -39,11 +48,8 @@ public class HibernateMusicItemDAO implements MusicItemDAO {
     }
 
     @Override
-    public Collection<MusicItem> searchByKeyword(String keyword) {
-        // create the %keyword% wildcard syntax used in SQL LIKE operator
-        String wildcarded = "%" + keyword + "%";
-        // TODO: 
-        return null;
+    public void update(MusicItem item) {
+        // TODO
     }
 
     @Override

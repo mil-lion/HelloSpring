@@ -16,41 +16,43 @@ import ru.lionsoft.hello.spring.persist.entity.MusicItem;
 
 public class HibernateMusicItemDAO implements MusicItemDAO {
 
-    private SessionFactory sessionFactory;
+    private final SessionFactory sessionFactory;
 
-    public void setSessionFactory(SessionFactory sf) {
-        sessionFactory = sf;
+    public HibernateMusicItemDAO(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
     }
 
-    public SessionFactory getSessionFactory() {
-        return sessionFactory;
-    }
+    // ******************** Business Methods **************************
 
     @Override
     public MusicItem searchById(Long id) {
-        Session s = getSessionFactory().getCurrentSession();
-        MusicItem ret = (MusicItem) s.get(MusicItem.class, id);
-        return ret;
-    }
-
-    @Override
-    public void create(MusicItem item) {
-        Session s = getSessionFactory().getCurrentSession();
-        s.save(item);
+        return sessionFactory.getCurrentSession().get(MusicItem.class, id);
     }
 
     @Override
     public Collection<MusicItem> searchByKeyword(String keyword) {
         // create the %keyword% wildcard syntax used in SQL LIKE operator
         String wildcarded = "%" + keyword + "%";
-        // TODO: 
-        return null;
+        return sessionFactory.getCurrentSession()
+                .createQuery("SELECT mi FROM MusicItem mi "
+                        + "WHERE mi.title LIKE :keyword OR mi.artist LIKE :keyword")
+                .setParameter("keyword", wildcarded)
+                .getResultList();
+    }
+
+    @Override
+    public void create(MusicItem item) {
+        sessionFactory.getCurrentSession().save(item);
+    }
+
+    @Override
+    public void update(MusicItem item) {
+        sessionFactory.getCurrentSession().update(item);
     }
 
     @Override
     public void delete(MusicItem item) {
-        Session s = getSessionFactory().getCurrentSession();
-        s.delete(item);
+        sessionFactory.getCurrentSession().delete(item);
     }
 
 }

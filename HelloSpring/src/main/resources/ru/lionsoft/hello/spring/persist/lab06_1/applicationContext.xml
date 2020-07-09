@@ -17,9 +17,20 @@
         <property name="mappingResources">
             <list>
                 <value>ru/lionsoft/hello/spring/persist/entity/MusicItem.hbm.xml</value>
+                <value>ru/lionsoft/hello/spring/persist/entity/Event.hbm.xml</value>
             </list>
         </property>
-		
+	
+        <property name="annotatedClasses">
+            <list>
+                <value>ru.lionsoft.hello.spring.persist.entity.DiscountCode</value>
+                <value>ru.lionsoft.hello.spring.persist.entity.MicroMarket</value>
+                <value>ru.lionsoft.hello.spring.persist.entity.Customer</value>
+            </list>
+        </property>
+                        	
+        <!--<property name="packagesToScan" value="ru.lionsoft.hello.spring.persist.entity" />-->
+        
         <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.DerbyDialect</prop>
@@ -36,7 +47,7 @@
     </bean>
 
     <bean id="musicItemDAO" class="ru.lionsoft.hello.spring.persist.lab06_1.HibernateMusicItemDAO">
-        <property name="sessionFactory" ref="javatunesSessionFactory"/>
+        <constructor-arg ref="javatunesSessionFactory"/>
     </bean>
 
 </beans>
