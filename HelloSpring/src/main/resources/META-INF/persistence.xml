@@ -11,11 +11,13 @@
         <class>ru.lionsoft.hello.spring.persist.entity.MicroMarket</class>
         <class>ru.lionsoft.hello.spring.persist.entity.Customer</class>
         <properties>
+            <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
             <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/sample"/>
             <property name="javax.persistence.jdbc.user" value="app"/>
-            <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
             <property name="javax.persistence.jdbc.password" value="app"/>
             <property name="javax.persistence.schema-generation.database.action" value="none" />
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.hbm2ddl.auto" value="update" />
         </properties>
     </persistence-unit>
 </persistence>
