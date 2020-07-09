@@ -16,7 +16,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import ru.lionsoft.hello.spring.persist.entity.MusicItem;
 import static ru.lionsoft.hello.spring.util.PathUtil.path;
 
-class SpringHibernateTest {
+public class SpringHibernateTest {
 
     public static void main(String[] args) throws Exception {
         String[] configFiles = {path(SpringHibernateTest.class, "applicationContext.xml")};

@@ -6,7 +6,7 @@
  * We hope that it's useful to you.  Enjoy.
  * Copyright 2005-2020 LionSoft LLC.
  */
-package ru.lionsoft.hello.spring.persist.lab07_1;
+package ru.lionsoft.hello.spring.persist.lab06_2;
 
 import java.util.Collection;
 import ru.lionsoft.hello.spring.persist.entity.MusicItem;

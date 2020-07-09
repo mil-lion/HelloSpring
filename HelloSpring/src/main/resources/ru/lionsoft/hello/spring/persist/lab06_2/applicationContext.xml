@@ -49,7 +49,7 @@
 		
     </bean>
 
-    <bean id="musicItemDAO" class="ru.lionsoft.hello.spring.persist.lab07_1.HibernateMusicItemDAO">
+    <bean id="musicItemDAO" class="ru.lionsoft.hello.spring.persist.lab06_2.HibernateMusicItemDAO">
         <constructor-arg ref="javatunesSessionFactory"/>
     </bean>
 

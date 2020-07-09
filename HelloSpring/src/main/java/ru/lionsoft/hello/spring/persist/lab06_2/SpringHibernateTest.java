@@ -6,7 +6,7 @@
  * We hope that it's useful to you.  Enjoy.
  * Copyright 2005-2020 LionSoft LLC.
  */
-package ru.lionsoft.hello.spring.persist.lab07_1;
+package ru.lionsoft.hello.spring.persist.lab06_2;
 
 import java.math.BigDecimal;
 import java.sql.Date;
@@ -14,11 +14,12 @@ import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import ru.lionsoft.hello.spring.persist.entity.MusicItem;
+import static ru.lionsoft.hello.spring.util.PathUtil.path;
 
-class SpringHibernateTest {
+public class SpringHibernateTest {
 
     public static void main(String[] args) throws Exception {
-        String[] configFiles = {"ru/lionsoft/hello/spring/persist/lab07_1/applicationContext.xml"};
+        String[] configFiles = {path(SpringHibernateTest.class, "applicationContext.xml")};
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(configFiles);
         System.out.println("Created container");
 
@@ -35,9 +36,9 @@ class SpringHibernateTest {
             //* Commented out so we don't keep creating instances during testing
             // Create a new MusicItem
             mItem.setNum(newItemNum);
-            mItem.setTitle("Foo");
-            mItem.setArtist("me");
-            mItem.setReleaseDate(new Date(System.currentTimeMillis()));
+            mItem.setTitle("Master of Puppets");
+            mItem.setArtist("Metallica");
+            mItem.setReleaseDate(Date.valueOf("1986-03-03"));
             mItem.setListPrice(new BigDecimal("25.00"));
             mItem.setPrice(new BigDecimal("14.99"));
             System.out.println("Created MusicItem: " + mItem);
@@ -51,7 +52,7 @@ class SpringHibernateTest {
             // */
             // Modifying an entity
             System.out.println("*** update ***");
-            Long modId = 5l;
+            Long modId = 5L;
             sf.getCurrentSession().beginTransaction();
             mItem = dao.searchById(modId);
             System.out.println("Retrieved MusicItem with id, Title: " + modId + ", " + mItem.getTitle());
@@ -59,13 +60,14 @@ class SpringHibernateTest {
             sf.getCurrentSession().getTransaction().commit();
 
             // Deleting an entity
-            Long delId = 12l;
+            Long delId = 12L;
             sf.getCurrentSession().beginTransaction();
             mItem = dao.searchById(delId);
             dao.delete(mItem);
             sf.getCurrentSession().getTransaction().commit();
 
         } catch (HibernateException e) {
+            System.err.println("Error: " + e.getMessage());
             e.printStackTrace();
         }
     }
