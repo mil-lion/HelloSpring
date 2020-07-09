@@ -34,7 +34,7 @@ public class HibernateMusicItemDAO implements MusicItemDAO {
         // create the %keyword% wildcard syntax used in SQL LIKE operator
         String wildcarded = "%" + keyword + "%";
         return sessionFactory.getCurrentSession()
-                .createQuery("SELECT mi FROM MusicItem mi "
+                .createQuery("FROM MusicItem mi "
                         + "WHERE mi.title LIKE :keyword OR mi.artist LIKE :keyword")
                 .setParameter("keyword", wildcarded)
                 .getResultList();

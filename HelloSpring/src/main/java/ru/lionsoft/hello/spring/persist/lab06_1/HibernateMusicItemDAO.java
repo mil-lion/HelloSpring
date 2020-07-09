@@ -10,7 +10,6 @@ package ru.lionsoft.hello.spring.persist.lab06_1;
 
 import java.util.Collection;
 
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import ru.lionsoft.hello.spring.persist.entity.MusicItem;
 
@@ -36,7 +35,7 @@ public class HibernateMusicItemDAO implements MusicItemDAO {
         String wildcarded = "%" + keyword + "%";
         // TODO: create query 
         return sessionFactory.getCurrentSession()
-                .createQuery("SELECT mi FROM MusicItem mi "
+                .createQuery("FROM MusicItem mi "
                         + "WHERE mi.title LIKE :keyword OR mi.artist LIKE :keyword")
                 .setParameter("keyword", wildcarded)
                 .getResultList();
