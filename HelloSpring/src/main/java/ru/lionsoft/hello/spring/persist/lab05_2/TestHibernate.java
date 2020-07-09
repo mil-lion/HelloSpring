@@ -47,9 +47,8 @@ public class TestHibernate {
             sf.close();
 
         } catch (HibernateException e) {
+            System.err.println("Error: " + e.getMessage());
             e.printStackTrace();
-        } catch (Exception ex) {
-            ex.printStackTrace();
         }
     }
 
