@@ -7,8 +7,7 @@
 
     <!-- a SessionFactory instance -->
     <session-factory>
-
-        <!-- properties -->
+        <!-- Database Connection Settings -->
         <property name="hibernate.connection.username">app</property>
         <property name="hibernate.connection.password">app</property>
         <property name="hibernate.connection.url">jdbc:derby://localhost:1527/sample</property>
@@ -25,6 +24,7 @@
         <!-- Mapping Files -->
         <mapping resource="ru/lionsoft/hello/spring/persist/entity/Event.hbm.xml" />
         <mapping resource="ru/lionsoft/hello/spring/persist/entity/MusicItem.hbm.xml" />
+        
         <!-- Mapping Entity Classes -->
         <mapping class="ru.lionsoft.hello.spring.persist.entity.DiscountCode"/>
         <mapping class="ru.lionsoft.hello.spring.persist.entity.MicroMarket"/>
