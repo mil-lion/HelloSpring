@@ -20,7 +20,6 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -37,7 +36,7 @@ public class DiscountCode implements Serializable {
     @Id
     @Basic(optional = false)
     @Column(name = "DISCOUNT_CODE", nullable = false, length = 1)
-    private String discountCode;
+    private String code;
     
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Column(precision = 4, scale = 2)
@@ -50,15 +49,15 @@ public class DiscountCode implements Serializable {
     }
 
     public DiscountCode(String discountCode) {
-        this.discountCode = discountCode;
+        this.code = discountCode;
     }
 
-    public String getDiscountCode() {
-        return discountCode;
+    public String getCode() {
+        return code;
     }
 
-    public void setDiscountCode(String discountCode) {
-        this.discountCode = discountCode;
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public BigDecimal getRate() {
@@ -69,7 +68,6 @@ public class DiscountCode implements Serializable {
         this.rate = rate;
     }
 
-    @XmlTransient
     public List<Customer> getCustomers() {
         return customers;
     }
@@ -81,7 +79,7 @@ public class DiscountCode implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (discountCode != null ? discountCode.hashCode() : 0);
+        hash += (code != null ? code.hashCode() : 0);
         return hash;
     }
 
@@ -92,7 +90,8 @@ public class DiscountCode implements Serializable {
             return false;
         }
         DiscountCode other = (DiscountCode) object;
-        if ((this.discountCode == null && other.discountCode != null) || (this.discountCode != null && !this.discountCode.equals(other.discountCode))) {
+        if ((this.code == null && other.code != null) 
+                || (this.code != null && !this.code.equals(other.code))) {
             return false;
         }
         return true;
@@ -101,7 +100,7 @@ public class DiscountCode implements Serializable {
     @Override
     public String toString() {
         return "DiscountCode{" 
-                + "discountCode=" + discountCode 
+                + "code=" + code 
                 + ", rate=" + rate 
                 + '}';
     }

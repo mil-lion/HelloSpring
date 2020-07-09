@@ -19,8 +19,6 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -28,7 +26,6 @@ import javax.xml.bind.annotation.XmlTransient;
  */
 @Entity
 @Table(name = "MICRO_MARKET")
-@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "MicroMarket.findAll", query = "SELECT m FROM MicroMarket m"),
     @NamedQuery(name = "MicroMarket.findByZipCode", query = "SELECT m FROM MicroMarket m WHERE m.zipCode = :zipCode"),
@@ -54,7 +51,7 @@ public class MicroMarket implements Serializable {
     @Column(name = "AREA_WIDTH", precision = 52)
     private Double areaWidth;
     
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "zip")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "microMarket")
     private List<Customer> customers;
 
     public MicroMarket() {
@@ -96,7 +93,6 @@ public class MicroMarket implements Serializable {
         this.areaWidth = areaWidth;
     }
 
-    @XmlTransient
     public List<Customer> getCustomers() {
         return customers;
     }
@@ -119,7 +115,8 @@ public class MicroMarket implements Serializable {
             return false;
         }
         MicroMarket other = (MicroMarket) object;
-        if ((this.zipCode == null && other.zipCode != null) || (this.zipCode != null && !this.zipCode.equals(other.zipCode))) {
+        if ((this.zipCode == null && other.zipCode != null) 
+                || (this.zipCode != null && !this.zipCode.equals(other.zipCode))) {
             return false;
         }
         return true;
@@ -127,7 +124,12 @@ public class MicroMarket implements Serializable {
 
     @Override
     public String toString() {
-        return "ru.lionsoft.hello.spring.context.lab01_2.MicroMarket[ zipCode=" + zipCode + " ]";
+        return "MicroMarket{" 
+                + "zipCode=" + zipCode 
+                + ", radius=" + radius 
+                + ", areaLength=" + areaLength 
+                + ", areaWidth=" + areaWidth 
+                + '}';
     }
-    
+
 }

@@ -17,17 +17,15 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author Igor Morenko <morenko at lionsoft.ru>
  */
 @Entity
-@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Customer.findAll", query = "SELECT c FROM Customer c"),
-    @NamedQuery(name = "Customer.findByCustomerId", query = "SELECT c FROM Customer c WHERE c.customerId = :customerId"),
+    @NamedQuery(name = "Customer.findByCustomerId", query = "SELECT c FROM Customer c WHERE c.id = :customerId"),
     @NamedQuery(name = "Customer.findByName", query = "SELECT c FROM Customer c WHERE c.name = :name"),
     @NamedQuery(name = "Customer.findByAddressline1", query = "SELECT c FROM Customer c WHERE c.addressline1 = :addressline1"),
     @NamedQuery(name = "Customer.findByAddressline2", query = "SELECT c FROM Customer c WHERE c.addressline2 = :addressline2"),
@@ -44,8 +42,16 @@ public class Customer implements Serializable {
     @Id
     @Basic(optional = false)
     @Column(name = "CUSTOMER_ID", nullable = false)
-    private Integer customerId;
+    private Integer id;
     
+    @JoinColumn(name = "DISCOUNT_CODE", referencedColumnName = "DISCOUNT_CODE", nullable = false)
+    @ManyToOne(optional = false)
+    private DiscountCode discountCode;
+    
+    @JoinColumn(name = "ZIP", referencedColumnName = "ZIP_CODE", nullable = false)
+    @ManyToOne(optional = false)
+    private MicroMarket microMarket;
+
     @Column(length = 30)
     private String name;
     
@@ -73,27 +79,35 @@ public class Customer implements Serializable {
     @Column(name = "CREDIT_LIMIT")
     private Integer creditLimit;
     
-    @JoinColumn(name = "DISCOUNT_CODE", referencedColumnName = "DISCOUNT_CODE", nullable = false)
-    @ManyToOne(optional = false)
-    private DiscountCode discountCode;
-    
-    @JoinColumn(name = "ZIP", referencedColumnName = "ZIP_CODE", nullable = false)
-    @ManyToOne(optional = false)
-    private MicroMarket zip;
-
     public Customer() {
     }
 
     public Customer(Integer customerId) {
-        this.customerId = customerId;
+        this.id = customerId;
     }
 
-    public Integer getCustomerId() {
-        return customerId;
+    public Integer getId() {
+        return id;
     }
 
-    public void setCustomerId(Integer customerId) {
-        this.customerId = customerId;
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public DiscountCode getDiscountCode() {
+        return discountCode;
+    }
+
+    public void setDiscountCode(DiscountCode discountCode) {
+        this.discountCode = discountCode;
+    }
+
+    public MicroMarket getMicroMarket() {
+        return microMarket;
+    }
+
+    public void setMicroMarket(MicroMarket microMarket) {
+        this.microMarket = microMarket;
     }
 
     public String getName() {
@@ -168,26 +182,10 @@ public class Customer implements Serializable {
         this.creditLimit = creditLimit;
     }
 
-    public DiscountCode getDiscountCode() {
-        return discountCode;
-    }
-
-    public void setDiscountCode(DiscountCode discountCode) {
-        this.discountCode = discountCode;
-    }
-
-    public MicroMarket getZip() {
-        return zip;
-    }
-
-    public void setZip(MicroMarket zip) {
-        this.zip = zip;
-    }
-
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (customerId != null ? customerId.hashCode() : 0);
+        hash += (id != null ? id.hashCode() : 0);
         return hash;
     }
 
@@ -198,7 +196,8 @@ public class Customer implements Serializable {
             return false;
         }
         Customer other = (Customer) object;
-        if ((this.customerId == null && other.customerId != null) || (this.customerId != null && !this.customerId.equals(other.customerId))) {
+        if ((this.id == null && other.id != null) 
+                || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
         return true;
@@ -207,7 +206,9 @@ public class Customer implements Serializable {
     @Override
     public String toString() {
         return "Customer{" 
-                + "customerId=" + customerId 
+                + "id=" + id 
+                + ", discountCode=" + discountCode 
+                + ", microMarket=" + microMarket 
                 + ", name=" + name 
                 + ", addressline1=" + addressline1 
                 + ", addressline2=" + addressline2 
@@ -217,8 +218,6 @@ public class Customer implements Serializable {
                 + ", fax=" + fax 
                 + ", email=" + email 
                 + ", creditLimit=" + creditLimit 
-                + ", discountCode=" + discountCode 
-                + ", zip=" + zip 
                 + '}';
     }
 
