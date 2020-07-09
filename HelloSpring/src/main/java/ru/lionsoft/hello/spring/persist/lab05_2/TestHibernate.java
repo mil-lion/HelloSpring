@@ -9,13 +9,12 @@
  */
 package ru.lionsoft.hello.spring.persist.lab05_2;
 
-import ru.lionsoft.hello.spring.persist.entity.DiscountCode;
-import ru.lionsoft.hello.spring.persist.entity.Event;
-import ru.lionsoft.hello.spring.persist.entity.MusicItem;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import ru.lionsoft.hello.spring.persist.entity.Event;
+import ru.lionsoft.hello.spring.persist.entity.MusicItem;
 
 public class TestHibernate {
 
@@ -35,12 +34,10 @@ public class TestHibernate {
             Event event = s.get(Event.class, id);
             System.out.println("Retreived event: " + event.getTitle());
 
+            id = 2L;
             MusicItem mItem = (MusicItem) s.get(MusicItem.class, id);
             System.out.println("Retrieved MusicItem with Num: " + mItem.getNum());
             System.out.println("mItem = " + mItem);
-
-            DiscountCode discountCode = s.find(DiscountCode.class, "H");
-            System.out.println("discountCode = " + discountCode);
 
             s.getTransaction().commit();
             s.close();
