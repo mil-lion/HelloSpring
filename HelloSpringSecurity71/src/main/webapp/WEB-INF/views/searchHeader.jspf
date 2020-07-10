@@ -17,6 +17,8 @@
                     <form:input size='20' path='keyword'/><br/>
                     <form:select path="artist" items="${artists}"/><br/>
                     <input type='submit' name='Submit' value='Search'/>
+                    <!-- CSRF Fix Problem (GET => POST) -->
+                    <input type='hidden' name='${_csrf.parameterName}' value='${_csrf.token}' />
                 </td>
             </tr>
         </tbody>

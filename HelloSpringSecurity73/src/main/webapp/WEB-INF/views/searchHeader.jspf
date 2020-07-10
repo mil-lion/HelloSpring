@@ -28,6 +28,8 @@
                     <form:select path="artist" items="${artists}"/><br/>
                 </sec:authorize>
                     <input type='submit' name='Submit' value='Search'/>
+                    <!-- CSRF Fix Problem (GET => POST) -->
+                    <input type='hidden' name='${_csrf.parameterName}' value='${_csrf.token}' />
                 </td>
             </tr>
         </tbody>
