@@ -16,8 +16,6 @@
         <failOnMissingWebXml>false</failOnMissingWebXml>
         <jakartaee>8.0</jakartaee>
         <springframework>5.2.3.RELEASE</springframework>
-        <hibernate>5.2.5.Final</hibernate>
-        <derby>10.14.2.0</derby>
     </properties>
     
     <dependencies>
@@ -36,11 +34,6 @@
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
-            <artifactId>spring-jdbc</artifactId>
-            <version>${springframework}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
             <version>${springframework}</version>
         </dependency>
@@ -48,17 +41,6 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
             <version>${springframework}</version>
-        </dependency>
-        <!-- JSP-JSTL -->
-        <dependency>
-            <groupId>javax.servlet.jsp.jstl</groupId>
-            <artifactId>javax.servlet.jsp.jstl-api</artifactId>
-            <version>1.2.2</version>
-        </dependency>
-        <dependency>
-            <groupId>org.glassfish.web</groupId>
-            <artifactId>javax.servlet.jsp.jstl</artifactId>
-            <version>1.2.5</version>
         </dependency>
         <!-- LOG4J -->
         <dependency>
