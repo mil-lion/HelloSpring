@@ -7,7 +7,8 @@
     <bean id="inMemoryItemDAO" class="ru.lionsoft.hello.spring.context.lab03_2.InMemoryItemDAO">
         <constructor-arg>
             <list>
-                <bean id="mi1" class="ru.lionsoft.hello.spring.context.entity.MusicItem">
+                <!-- Inner Beans -->
+                <bean class="ru.lionsoft.hello.spring.context.entity.MusicItem">
                     <constructor-arg value="1"/>
                     <property name="num" value="CD501"/>
                     <property name="title" value="Diva"/>
@@ -16,7 +17,7 @@
                     <property name="listPrice" value="17.97"/>
                     <property name="price" value="13.99"/>
                 </bean>
-                <bean id="mi2" class="ru.lionsoft.hello.spring.context.entity.MusicItem">
+                <bean class="ru.lionsoft.hello.spring.context.entity.MusicItem">
                     <constructor-arg value="2"/>
                     <property name="num" value="CD502"/>
                     <property name="title" value="Dream of the Blue Turtles"/>
@@ -25,7 +26,7 @@
                     <property name="listPrice" value="17.97"/>
                     <property name="price" value="14.99"/>
                 </bean>
-                <bean id="mi3" class="ru.lionsoft.hello.spring.context.entity.MusicItem">
+                <bean class="ru.lionsoft.hello.spring.context.entity.MusicItem">
                     <constructor-arg value="3"/>
                     <property name="num" value="CD503"/>
                     <property name="title" value="Trouble is..."/>
@@ -34,7 +35,7 @@
                     <property name="listPrice" value="17.97"/>
                     <property name="price" value="14.99"/>
                 </bean>
-                <bean id="mi4" class="ru.lionsoft.hello.spring.context.entity.MusicItem">
+                <bean class="ru.lionsoft.hello.spring.context.entity.MusicItem">
                     <constructor-arg value="4"/>
                     <property name="num" value="CD504"/>
                     <property name="title" value="Lie to Me"/>
@@ -43,7 +44,7 @@
                     <property name="listPrice" value="17.97"/>
                     <property name="price" value="14.99"/>
                 </bean>
-                <bean id="mi5" class="ru.lionsoft.hello.spring.context.entity.MusicItem">
+                <bean class="ru.lionsoft.hello.spring.context.entity.MusicItem">
                     <constructor-arg value="5"/>
                     <property name="num" value="CD505"/>
                     <property name="title" value="Little Earthquakes"/>
@@ -52,7 +53,7 @@
                     <property name="listPrice" value="17.97"/>
                     <property name="price" value="14.99"/>
                 </bean>
-                <bean id="mi6" class="ru.lionsoft.hello.spring.context.entity.MusicItem">
+                <bean class="ru.lionsoft.hello.spring.context.entity.MusicItem">
                     <constructor-arg value="6"/>
                     <property name="num" value="CD506"/>
                     <property name="title" value="Seal"/>
@@ -61,7 +62,7 @@
                     <property name="listPrice" value="17.97"/>
                     <property name="price" value="14.99"/>
                 </bean>
-                <bean id="mi7" class="ru.lionsoft.hello.spring.context.entity.MusicItem">
+                <bean class="ru.lionsoft.hello.spring.context.entity.MusicItem">
                     <constructor-arg value="7"/>
                     <property name="num" value="CD507"/>
                     <property name="title" value="Ian Moore"/>
@@ -70,7 +71,7 @@
                     <property name="listPrice" value="9.97"/>
                     <property name="price" value="9.97"/>
                 </bean>
-                <bean id="mi8" class="ru.lionsoft.hello.spring.context.entity.MusicItem">
+                <bean class="ru.lionsoft.hello.spring.context.entity.MusicItem">
                     <constructor-arg value="8"/>
                     <property name="num" value="CD508"/>
                     <property name="title" value="So Much for the Afterglow"/>
@@ -79,7 +80,7 @@
                     <property name="listPrice" value="16.97"/>
                     <property name="price" value="13.99"/>
                 </bean>
-                <bean id="mi9" class="ru.lionsoft.hello.spring.context.entity.MusicItem">
+                <bean class="ru.lionsoft.hello.spring.context.entity.MusicItem">
                     <constructor-arg value="9"/>
                     <property name="num" value="CD509"/>
                     <property name="title" value="Surfacing"/>
@@ -88,7 +89,7 @@
                     <property name="listPrice" value="17.97"/>
                     <property name="price" value="13.99"/>
                 </bean>
-                <bean id="mi10" class="ru.lionsoft.hello.spring.context.entity.MusicItem">
+                <bean class="ru.lionsoft.hello.spring.context.entity.MusicItem">
                     <constructor-arg value="10"/>
                     <property name="num" value="CD510"/>
                     <property name="title" value="Hysteria"/>
@@ -97,7 +98,7 @@
                     <property name="listPrice" value="17.97"/>
                     <property name="price" value="14.99"/>
                 </bean>
-                <bean id="mi11" class="ru.lionsoft.hello.spring.context.entity.MusicItem">
+                <bean class="ru.lionsoft.hello.spring.context.entity.MusicItem">
                     <constructor-arg value="11"/>
                     <property name="num" value="CD511"/>
                     <property name="title" value="A Life of Saturdays"/>
@@ -106,7 +107,7 @@
                     <property name="listPrice" value="16.97"/>
                     <property name="price" value="12.99"/>
                 </bean>
-                <bean id="mi12" class="ru.lionsoft.hello.spring.context.entity.MusicItem">
+                <bean class="ru.lionsoft.hello.spring.context.entity.MusicItem">
                     <constructor-arg value="12"/>
                     <property name="num" value="CD512"/>
                     <property name="title" value="Human Clay"/>
@@ -115,7 +116,7 @@
                     <property name="listPrice" value="18.97"/>
                     <property name="price" value="13.28"/>
                 </bean>
-                <bean id="mi13" class="ru.lionsoft.hello.spring.context.entity.MusicItem">
+                <bean class="ru.lionsoft.hello.spring.context.entity.MusicItem">
                     <constructor-arg value="13"/>
                     <property name="num" value="CD513"/>
                     <property name="title" value="My, I'm Large"/>
@@ -124,7 +125,7 @@
                     <property name="listPrice" value="11.97"/>
                     <property name="price" value="11.97"/>
                 </bean>
-                <bean id="mi14" class="ru.lionsoft.hello.spring.context.entity.MusicItem">
+                <bean class="ru.lionsoft.hello.spring.context.entity.MusicItem">
                     <constructor-arg value="14"/>
                     <property name="num" value="CD514"/>
                     <property name="title" value="So"/>
@@ -133,7 +134,7 @@
                     <property name="listPrice" value="17.97"/>
                     <property name="price" value="13.99"/>
                 </bean>
-                <bean id="mi15" class="ru.lionsoft.hello.spring.context.entity.MusicItem">
+                <bean class="ru.lionsoft.hello.spring.context.entity.MusicItem">
                     <constructor-arg value="15"/>
                     <property name="num" value="CD515"/>
                     <property name="title" value="Big Ones"/>
@@ -142,7 +143,7 @@
                     <property name="listPrice" value="18.97"/>
                     <property name="price" value="14.99"/>
                 </bean>
-                <bean id="mi16" class="ru.lionsoft.hello.spring.context.entity.MusicItem">
+                <bean class="ru.lionsoft.hello.spring.context.entity.MusicItem">
                     <constructor-arg value="16"/>
                     <property name="num" value="CD516"/>
                     <property name="title" value="90125"/>
@@ -151,7 +152,7 @@
                     <property name="listPrice" value="11.97"/>
                     <property name="price" value="11.97"/>
                 </bean>
-                <bean id="mi17" class="ru.lionsoft.hello.spring.context.entity.MusicItem">
+                <bean class="ru.lionsoft.hello.spring.context.entity.MusicItem">
                     <constructor-arg value="17"/>
                     <property name="num" value="CD517"/>
                     <property name="title" value="1984"/>
@@ -160,7 +161,7 @@
                     <property name="listPrice" value="11.97"/>
                     <property name="price" value="11.97"/>
                 </bean>
-                <bean id="mi18" class="ru.lionsoft.hello.spring.context.entity.MusicItem">
+                <bean class="ru.lionsoft.hello.spring.context.entity.MusicItem">
                     <constructor-arg value="18"/>
                     <property name="num" value="CD518"/>
                     <property name="title" value="Escape"/>

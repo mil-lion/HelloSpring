@@ -8,9 +8,15 @@
  */
 package ru.lionsoft.hello.spring.context.lab03_2;
 
+import java.util.stream.Stream;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import ru.lionsoft.hello.spring.context.entity.MusicItem;
 import static ru.lionsoft.hello.spring.util.PathUtil.path;
 
+/**
+ * 
+ * @author Igor Morenko
+ */
 public class JavaTunes {
 
     private static final String APPLICATION_CONTEXT = path(JavaTunes.class, "applicationContext.xml");
@@ -35,12 +41,19 @@ public class JavaTunes {
 */
 
         // Optional - getting names of all defined beans.
-        String[] names = ctx.getBeanDefinitionNames();
         System.out.println("\n*** Listing of all bean names:");
+        String[] names = ctx.getBeanDefinitionNames();
         for (String beanName : names) {
             System.out.println(beanName);
         }
 
+        System.out.println("\n*** Listing of all bean names for type Catalog:");
+        Stream.of(ctx.getBeanNamesForType(Catalog.class)).forEach(System.out::println);
+        
+        // Publish event to ApplicationContext
+        System.out.println("\n*** Publish Event to ApplicationContext");
+        ctx.publishEvent("Hello from Application Context!");
+        
         ctx.close();
         System.out.println("\nApplicationContext closed");
     }

@@ -15,7 +15,7 @@ import org.springframework.beans.factory.config.BeanPostProcessor;
  * Bean Post Processor (Interceptor)
  * @author Igor Morenko <morenko at lionsoft.ru>
  */
-public class CustomBeanPostProcessor 
+public class MyBeanPostProcessor 
         implements BeanPostProcessor // for intercept before/after invoke method init() for beans
 {
     
