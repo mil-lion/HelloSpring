@@ -8,7 +8,12 @@
 
     <bean id="igorMorenko" class="ru.lionsoft.hello.spring.context.lab03_3.InstructorData">
         <property name="name" value="Igor Morenko" />
-        <property name="age" value="48.5" />
+        <property name="age" value="49.1" />
+    </bean>
+    
+    <bean id="igorMironchik" class="ru.lionsoft.hello.spring.context.lab03_3.InstructorData">
+        <property name="name" value="Igor Mironchik" />
+        <property name="age" value="60.5" />
     </bean>
     
     <!-- TODO add the component-scan element -->

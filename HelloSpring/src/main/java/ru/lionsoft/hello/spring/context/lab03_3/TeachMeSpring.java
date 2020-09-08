@@ -12,6 +12,10 @@ import java.util.stream.Stream;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import static ru.lionsoft.hello.spring.util.PathUtil.path;
 
+/**
+ * 
+ * @author Igor Morenko
+ */
 public class TeachMeSpring {
 
     public static final String APPLICATION_CONTEXT = path(TeachMeSpring.class, "applicationContext.xml");

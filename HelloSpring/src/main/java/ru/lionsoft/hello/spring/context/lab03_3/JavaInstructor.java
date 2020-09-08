@@ -24,16 +24,16 @@ public class JavaInstructor implements Teacher {
 
     // **************** Field Injection ********************
     
-    @Resource
+    @Resource // byType
+//    @Autowired // byType
     private ApplicationContext ctx;
     
     // TODO - Add Resource annotation
     @Resource(name="springCourseBook")  // Commented out to do optional autowiring
     // @AuAutowired // byName or byType
-    // @Autowired @Qualifier("springCourseBook") // by bean name
+    // @Autowired @Qualifier("springCourseBook") // byName
     private InfoSource info;
-    
-    
+        
     //@Resource
     @Autowired  // Optional autowiring
     private Collection<InfoSource> allInfoSources;
@@ -42,6 +42,7 @@ public class JavaInstructor implements Teacher {
     @Qualifier("Java") // Optional Qualifier part.
     private Collection<InfoSource> javaInfoSources;
     
+//    @Resource // byName or byType
     @Autowired // Optional autowired by property name = bean name
     private InfoSource javaBook;
     
@@ -61,7 +62,7 @@ public class JavaInstructor implements Teacher {
 
 //    @Resource // error!!!
     @Autowired // byType
-    public JavaInstructor(InstructorData data) {
+    public JavaInstructor(@Qualifier("igorMorenko") InstructorData data) {
         this.data = data;
     }
         
@@ -70,6 +71,8 @@ public class JavaInstructor implements Teacher {
     @Override
     public void teach() {
         System.out.println("\n@@@@ JavaInstructor.teach()");
+        System.out.println("data: " + data);
+        System.out.println("ctx = " + ctx);
         System.out.println("info: " + info.getData());
         System.out.println("javaBook: " + javaBook.getData());
         System.out.println("scalaBook: " + scalaBook.getData());
@@ -84,8 +87,15 @@ public class JavaInstructor implements Teacher {
     @PostConstruct
     public void init() {
         System.out.println("\n@@@@ JavaInstructor.init()");
+        System.out.println("data: " + data);
         System.out.println("ctx = " + ctx);
         System.out.println("info = " + info);
+        System.out.println("javaBook: " + javaBook.getData());
+        System.out.println("scalaBook: " + scalaBook.getData());
+        System.out.println("javaInfoSources: ");
+        javaInfoSources.forEach(e -> System.out.println("* " + e.getData()));
+        System.out.println("allInfoSources:");
+        allInfoSources.forEach(e -> System.out.println("* " + e.getData()));
     }
     
     @PreDestroy

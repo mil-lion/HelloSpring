@@ -14,9 +14,6 @@ public class InstructorData {
     // ********************* Properties *******************
     
     private String name;    
-    private Double age;
-    
-    
     
     public String getName() {
         return name;
@@ -25,6 +22,8 @@ public class InstructorData {
     public void setName(String name) {
         this.name = name;
     }
+
+    private Double age;
 
     public Double getAge() {
         return age;
