@@ -1,7 +1,10 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * This code is sample code, provided as-is, and we make no
+ * warranties as to its correctness or suitability for
+ * any purpose.
+ *
+ * We hope that it's useful to you.  Enjoy.
+ * Copyright 2005-2020 LionSoft LLC.
  */
 package ru.lionsoft.hello.spring.persist.lab04_1;
 
@@ -14,6 +17,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import javax.annotation.Resource;
 import javax.sql.DataSource;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.stereotype.Component;
 import ru.lionsoft.hello.spring.persist.entity.MusicItem;
 
@@ -22,6 +26,7 @@ import ru.lionsoft.hello.spring.persist.entity.MusicItem;
  * @author Igor Morenko (emailto:imorenko@yandex.ru)
  */
 @Component
+//@ImportResource("classpath:ru/**/lab04_1/*.xml")
 public class DatabaseItemDAO implements ItemDAO {
     
     @Resource(name = "sampleDataSource") // field injection
@@ -51,7 +56,9 @@ public class DatabaseItemDAO implements ItemDAO {
     public Collection<MusicItem> searchByArtistTitle(String keyword) {
         Collection<MusicItem> items = new ArrayList<>();
         try (Connection connection = dataSource.getConnection();) {
-            String sqlText = "SELECT * FROM items WHERE title LIKE '%" + keyword + "%' OR artist LIKE '%" + keyword + "%'";
+            String sqlText = "SELECT * FROM items "
+                    + "WHERE title LIKE '%" + keyword + "%' "
+                    + "OR artist LIKE '%" + keyword + "%'";
             try (Statement stmt = connection.createStatement()) {
                 try (ResultSet rs = stmt.executeQuery(sqlText);) {
                     while (rs.next()) {

@@ -1,13 +1,17 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * This code is sample code, provided as-is, and we make no
+ * warranties as to its correctness or suitability for
+ * any purpose.
+ *
+ * We hope that it's useful to you.  Enjoy.
+ * Copyright 2005-2020 LionSoft LLC.
  */
 package ru.lionsoft.hello.spring.persist.lab04_1;
 
 import java.util.Collection;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import ru.lionsoft.hello.spring.persist.entity.MusicItem;
 
@@ -15,12 +19,13 @@ import ru.lionsoft.hello.spring.persist.entity.MusicItem;
  *
  * @author Igor Morenko (emailto:imorenko@yandex.ru)
  */
-//@Component("catalog")
+@Component("catalog")
 public class JavaTunesCatalog implements Catalog {
     
     // *********************** Properties *****************
     
     // maxSearchResults property
+    @Value("#{applicationConfig.catalogMaxSearchResults}")
     private int maxSearchResults = 0;
 
     /**
