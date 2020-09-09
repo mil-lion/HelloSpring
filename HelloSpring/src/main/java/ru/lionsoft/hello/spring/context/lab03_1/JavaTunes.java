@@ -35,7 +35,7 @@ public class JavaTunes {
         Catalog cat = (Catalog) ctx.getBean("javaTunesCatalog");
 
         // Search by id - returns a single item
-        System.out.println(cat.findById(new Long(2)));
+        System.out.println(cat.findById(Long.valueOf(2)));
 
         // The below will now throw an exception, since mi1 is an inner bean
         MusicItem mi = (MusicItem) ctx.getBean("mi1");

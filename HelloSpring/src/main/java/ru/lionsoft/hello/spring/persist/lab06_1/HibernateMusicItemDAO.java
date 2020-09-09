@@ -36,7 +36,9 @@ public class HibernateMusicItemDAO implements MusicItemDAO {
         // TODO: create query 
         return sessionFactory.getCurrentSession()
                 .createQuery("FROM MusicItem mi "
-                        + "WHERE mi.title LIKE :keyword OR mi.artist LIKE :keyword")
+                        + "WHERE mi.title LIKE :keyword "
+                        + "OR mi.artist LIKE :keyword"
+                        , MusicItem.class)
                 .setParameter("keyword", wildcarded)
                 .getResultList();
     }
