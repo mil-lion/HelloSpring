@@ -23,6 +23,7 @@ INSERT INTO ITEMS (NUM, TITLE, ARTIST, RELEASE_DATE, LIST_PRICE, PRICE)
             ('CD504', 'Lie to Me', 'Jonny Lang', '1997-08-26', 17.97, 14.99),
             ('CD505', 'Little Earthquakes', 'Tori Amos', '1992-01-18', 17.97, 14.99),
             ('CD506', 'Seal', 'Seal', '1991-08-18', 17.97, 14.99),
+            ('CD507', 'Ian Moore', 'Ian Moore', '1993-12-05', 9.97, 9.97),
             ('CD508', 'So Much for the Afterglow', 'Everclear', '1997-01-19', 16.97, 13.99),
             ('CD509', 'Surfacing', 'Sarah McLachlan', '1997-12-04', 17.97, 13.99),
             ('CD510', 'Hysteria', 'Def Leppard', '1987-06-20', 17.97, 14.99),
