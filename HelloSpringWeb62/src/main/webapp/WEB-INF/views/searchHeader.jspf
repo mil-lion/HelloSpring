@@ -1,3 +1,12 @@
+<%-- 
+    Document   : searchHeader
+    Created on : 10 сент. 2020 г., 14:35:08
+    Author     : Igor Morenko (emailto:imorenko@yandex.ru)
+--%>
+
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+
 <!-- TODO: Finish the action properly -->
 <form method='post' action='${pageContext.request.contextPath}/TODO'>
     <table width='500'>

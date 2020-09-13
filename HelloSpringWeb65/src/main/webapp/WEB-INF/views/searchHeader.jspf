@@ -1,3 +1,11 @@
+<%-- 
+    Document   : searchHeader
+    Created on : 10 сент. 2020 г., 14:35:08
+    Author     : Igor Morenko (emailto:imorenko@yandex.ru)
+--%>
+
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <!-- TODO: Finish the action properly -->
