@@ -16,7 +16,7 @@
         <failOnMissingWebXml>false</failOnMissingWebXml>
         <jakartaee>8.0</jakartaee>
         <springframework>5.2.3.RELEASE</springframework>
-        <springsecurity>5.2.1.RELEASE</springsecurity>
+        <springsecurity>5.2.10.RELEASE</springsecurity>
         <hibernate.version>5.4.10.Final</hibernate.version>
         <derby.version>10.14.2.0</derby.version>
     </properties>
