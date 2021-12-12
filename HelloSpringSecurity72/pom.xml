@@ -15,8 +15,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <failOnMissingWebXml>false</failOnMissingWebXml>
         <jakartaee>8.0</jakartaee>
-        <springframework>5.2.3.RELEASE</springframework>
-        <springsecurity>5.2.1.RELEASE</springsecurity>
+        <springframework>5.2.4.RELEASE</springframework>
+        <springsecurity>5.2.10.RELEASE</springsecurity>
         <hibernate>5.2.5.Final</hibernate>
         <derby>10.14.2.0</derby>
     </properties>
@@ -81,7 +81,7 @@
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
-            <version>2.13.3</version>
+            <version>2.15.0</version>
         </dependency>
     </dependencies>
     
