@@ -13,7 +13,7 @@
         <maven.compiler.source>14</maven.compiler.source>
         <maven.compiler.target>14</maven.compiler.target>
         <springframework.version>5.2.8.RELEASE</springframework.version>
-        <hibernate.version>5.4.20.Final</hibernate.version>
+        <hibernate.version>5.4.24.Final</hibernate.version>
         <derby.version>10.14.2.0</derby.version>
     </properties>
 
