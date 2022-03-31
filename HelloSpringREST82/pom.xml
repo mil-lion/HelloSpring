@@ -15,7 +15,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <failOnMissingWebXml>false</failOnMissingWebXml>
         <jakartaee>8.0</jakartaee>
-        <springframework>5.2.4.RELEASE</springframework>
+        <springframework>5.3.18</springframework>
     </properties>
     
     <dependencies>
