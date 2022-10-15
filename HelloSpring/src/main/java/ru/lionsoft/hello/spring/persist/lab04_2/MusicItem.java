@@ -1,7 +1,10 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * This code is sample code, provided as-is, and we make no
+ * warranties as to its correctness or suitablity for
+ * any purpose.
+ *
+ * We hope that it's useful to you.  Enjoy.
+ * Copyright 2005-12 LionSoft LLC.
  */
 package ru.lionsoft.hello.spring.persist.lab04_2;
 
