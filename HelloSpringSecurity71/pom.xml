@@ -14,11 +14,9 @@
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <failOnMissingWebXml>false</failOnMissingWebXml>
-        <jakartaee>8.0</jakartaee>
-        <springframework>5.3.18</springframework>
-        <springsecurity>5.2.10.RELEASE</springsecurity>
-        <hibernate>5.2.5.Final</hibernate>
-        <derby>10.14.2.0</derby>
+        <jakartaee.version>8.0</jakartaee.version>
+        <springframework.version>5.3.23</springframework.version>
+        <springsecurity.version>5.4.10</springsecurity.version>
     </properties>
     
     <dependencies>
@@ -26,40 +24,40 @@
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
-            <version>${jakartaee}</version>
+            <version>${jakartaee.version}</version>
             <scope>provided</scope>
         </dependency>
         <!-- Spring -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>${springframework}</version>
+            <version>${springframework.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
-            <version>${springframework}</version>
+            <version>${springframework.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
-            <version>${springframework}</version>
+            <version>${springframework.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
-            <version>${springframework}</version>
+            <version>${springframework.version}</version>
         </dependency>
         <!-- Spring Security -->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-web</artifactId>
-            <version>${springsecurity}</version>
+            <version>${springsecurity.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-config</artifactId>
-            <version>${springsecurity}</version>
+            <version>${springsecurity.version}</version>
         </dependency>
         <!-- JSP-JSTL -->
         <dependency>
@@ -119,7 +117,7 @@
                                 <artifactItem>
                                     <groupId>javax</groupId>
                                     <artifactId>javaee-api</artifactId>
-                                    <version>${jakartaee}</version>
+                                    <version>${jakartaee.version}</version>
                                     <type>jar</type>
                                 </artifactItem>
                             </artifactItems>
