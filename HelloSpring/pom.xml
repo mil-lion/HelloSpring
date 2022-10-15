@@ -12,7 +12,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>15</maven.compiler.source>
         <maven.compiler.target>15</maven.compiler.target>
-        <springframework.version>5.2.8.RELEASE</springframework.version>
+        <springframework.version>5.3.23</springframework.version>
         <derby.version>10.14.2.0</derby.version>
     </properties>
 

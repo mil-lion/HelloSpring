@@ -11,6 +11,7 @@ package ru.lionsoft.hello.spring.persist.lab04_3;
 import java.util.Collection;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,6 +26,7 @@ import ru.lionsoft.hello.spring.persist.entity.MusicItem;
 public class HibernateItemDAO implements ItemDAO {
 
     @Autowired
+    @Qualifier("localSessionFactory")
     private SessionFactory sessionFactory;
         
     // searches catalog by ID
