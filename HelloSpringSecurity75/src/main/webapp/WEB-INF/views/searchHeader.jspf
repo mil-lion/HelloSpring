@@ -1,0 +1,37 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+
+<!-- TODO: Finish the action properly -->
+<form:form modelAttribute="search">
+    <table width='500'>
+        <tbody>
+            <tr>
+                <td><a href="${pageContext.request.contextPath}/logout">Logout</a></td>
+                <td align='right'>
+                <sec:authorize access='hasRole("ADMIN")'>
+                    <i>Welcome Administrator!!!</i>
+                </sec:authorize>
+                </td>
+            </tr>
+            <tr>
+                <td width='70'><img src='${pageContext.request.contextPath}/images/guitar.gif' width='64' height='62' border='0'/></td>
+                <td align='right' width='514'><b><font size='+2'>Welcome to JavaTunes!<br/> Your online music store.</font></b></td>
+            </tr>
+            <tr>
+                <td rowspan='2' width='70'><img src='${pageContext.request.contextPath}/images/piano.gif' width='63' height='53' border='0'/></td>
+                <td align='right' valign='top' width='514'><b><font size='+1'><i><font color='#0000cc'>JavaTunes Keyword CD Database Search</font></i></font></b></td>
+            </tr>
+            <tr>
+                <td align='right' valign='bottom' width='514'><font color='#0000cc'><b>Search Database </b></font>
+                    <form:input size='20' path='keyword'/><br/>
+                <sec:authorize access='hasRole("ADMIN")'>
+                    <form:select path="artist" items="${artists}"/><br/>
+                </sec:authorize>
+                    <input type='submit' name='Submit' value='Search'/>
+                    <!-- CSRF Fix Problem (GET => POST) -->
+                    <input type='hidden' name='${_csrf.parameterName}' value='${_csrf.token}' />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</form:form>

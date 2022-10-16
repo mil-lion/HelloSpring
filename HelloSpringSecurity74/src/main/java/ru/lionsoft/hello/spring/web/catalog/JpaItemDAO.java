@@ -21,7 +21,7 @@ import ru.lionsoft.hello.spring.web.entity.MusicItem;
  * be replaced with a persistent entity that goes to a database in a later lab.
  */
 @Component
-public class DatabaseItemDAO implements ItemDAO {
+public class JpaItemDAO implements ItemDAO {
 
     @PersistenceContext
     private EntityManager em;

@@ -93,7 +93,6 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .withUser("luser")
                 .password("{noop}user@password")
                 .roles("LOCAL");                
-
     }
     
 }

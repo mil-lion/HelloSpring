@@ -4,14 +4,13 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>ru.lionsoft.hello.spring</groupId>
     <artifactId>HelloSpringSecurity</artifactId>
-    <version>7.4-SNAPSHOT</version>
+    <version>7.5-SNAPSHOT</version>
     <packaging>war</packaging>
     
-    <name>HelloSpringSecurity-7.4-SNAPSHOT</name>
+    <name>HelloSpringSecurity-7.5-SNAPSHOT</name>
     
     <description>Пример использования SpringSecurity. 
 - Конфигурация Spring: без xml
-- Без использования абстрактного класса: WebSecurityConfigurerAdapter
 - Доступ к данным: JPA (Hibernate)
 - Аутентификация пользователей: inMemory и JDBC</description>
 
@@ -23,7 +22,7 @@
         <failOnMissingWebXml>false</failOnMissingWebXml>
         <jakartaee.version>8.0</jakartaee.version>
         <springframework.version>5.3.23</springframework.version>
-        <springsecurity.version>5.4.10</springsecurity.version>
+        <springsecurity.version>5.7.3</springsecurity.version>
         <hibernate.version>5.6.12.Final</hibernate.version>
         <derby.version>10.14.2.0</derby.version>
     </properties>

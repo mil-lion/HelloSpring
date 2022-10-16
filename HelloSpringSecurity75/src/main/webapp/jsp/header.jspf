@@ -1,0 +1,21 @@
+<table width='500'>
+    <tbody>
+        <tr>
+            <td><a href="${pageContext.request.contextPath}/logout">Logout</a></td>
+            <td align='right'>
+            <sec:authorize access='hasRole("ADMIN")'>
+                <i>Welcome Administrator!!!</i>
+            </sec:authorize>
+            </td>
+        </tr>
+        <tr>
+            <td width='70'><img src='${pageContext.request.contextPath}/images/guitar.gif' width='64' height='62' border='0'/></td>
+            <td align='right' width='514'><b><font size='+2'>Welcome to JavaTunes!<br/> Your online music store.</font></b></td>
+        </tr>
+        <tr>
+            <td rowspan='2' width='70'><img src='${pageContext.request.contextPath}/images/piano.gif' width='63' height='53' border='0'/></td>
+            <td align='right' valign='top' width='514'><b><font size='+1'><i><font color='#0000cc'>Largest Collection of Music Anywhere!</font></i></font></b></td>
+        </tr>
+    </tbody>
+</table>
+
