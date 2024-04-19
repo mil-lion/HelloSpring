@@ -6,28 +6,28 @@
  * We hope that it's useful to you.  Enjoy.
  * Copyright 2005-2024 LionSoft LLC.
  */
-package ru.lionsoft.hellospring.web.model.entity;
+package ru.lionsoft.hello.spring.web.model.entity;
 
-import jakarta.json.bind.adapter.JsonbAdapter;
+import jakarta.xml.bind.annotation.adapters.XmlAdapter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * JSON Адаптер для преобразования java.util.Date в JSON и обратно
+ * XML Адаптер для преобразования java.util.Date в XML и обратно
  * @author Igor Morenko (emailto:imorenko@yandex.ru)
  */
-public class JsonbDateAdapter implements JsonbAdapter<Date, String> {
+public class JaxbDateAdapter extends XmlAdapter<String, Date> {
 
     private final SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 
     @Override
-    public String adaptToJson(Date orgnl) throws Exception {
-        return df.format(orgnl);
+    public String marshal(Date bt) throws Exception {
+        return df.format(bt);
     }
 
     @Override
-    public Date adaptFromJson(String adptd) throws Exception {
-        return df.parse(adptd);
+    public Date unmarshal(String vt) throws Exception {
+        return df.parse(vt);
     }
-    
+
 }

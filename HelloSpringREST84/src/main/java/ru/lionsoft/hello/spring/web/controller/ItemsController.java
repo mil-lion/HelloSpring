@@ -6,7 +6,7 @@
  * We hope that it's useful to you.  Enjoy.
  * Copyright 2005-2024 LionSoft LLC.
  */
-package ru.lionsoft.hellospring.web.controller;
+package ru.lionsoft.hello.spring.web.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,9 +18,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
-import ru.lionsoft.hellospring.web.model.catalog.Catalog;
-import ru.lionsoft.hellospring.web.model.entity.MusicItem;
-import ru.lionsoft.hellospring.web.model.entity.ObjectWithList;
+import ru.lionsoft.hello.spring.web.model.catalog.Catalog;
+import ru.lionsoft.hello.spring.web.model.entity.MusicItem;
+import ru.lionsoft.hello.spring.web.model.entity.ObjectWithList;
 
 /**
  * Контролер REST сервиса

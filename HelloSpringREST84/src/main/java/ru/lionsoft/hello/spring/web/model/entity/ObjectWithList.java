@@ -6,7 +6,7 @@
  * We hope that it's useful to you.  Enjoy.
  * Copyright 2005-2024 LionSoft LLC.
  */
-package ru.lionsoft.hellospring.web.model.entity;
+package ru.lionsoft.hello.spring.web.model.entity;
 
 import jakarta.json.bind.annotation.JsonbProperty;
 import jakarta.xml.bind.annotation.XmlElement;

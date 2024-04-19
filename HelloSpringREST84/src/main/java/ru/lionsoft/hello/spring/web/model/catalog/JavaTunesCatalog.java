@@ -6,7 +6,7 @@
  * We hope that it's useful to you.  Enjoy.
  * Copyright 2005-2024 LionSoft LLC.
  */
-package ru.lionsoft.hellospring.web.model.catalog;
+package ru.lionsoft.hello.spring.web.model.catalog;
 
 import jakarta.annotation.security.RolesAllowed;
 import java.util.Collection;
@@ -15,7 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Component;
-import ru.lionsoft.hellospring.web.model.entity.MusicItem;
+import ru.lionsoft.hello.spring.web.model.entity.MusicItem;
 
 /**
  *

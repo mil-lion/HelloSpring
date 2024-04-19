@@ -6,7 +6,7 @@
  * We hope that it's useful to you.  Enjoy.
  * Copyright 2005-2024 LionSoft LLC.
  */
-package ru.lionsoft.hellospring.web.config;
+package ru.lionsoft.hello.spring.web.config;
 
 import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;

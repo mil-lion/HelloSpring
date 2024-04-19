@@ -6,7 +6,7 @@
  * We hope that it's useful to you.  Enjoy.
  * Copyright 2005-2024 LionSoft LLC.
  */
-package ru.lionsoft.hellospring.web.model.catalog;
+package ru.lionsoft.hello.spring.web.model.catalog;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -15,7 +15,7 @@ import java.util.Collection;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-import ru.lionsoft.hellospring.web.model.entity.MusicItem;
+import ru.lionsoft.hello.spring.web.model.entity.MusicItem;
 
 /**
  *

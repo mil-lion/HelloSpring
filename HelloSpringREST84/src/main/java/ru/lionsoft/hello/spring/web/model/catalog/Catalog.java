@@ -6,10 +6,10 @@
  * We hope that it's useful to you.  Enjoy.
  * Copyright 2005-2024 LionSoft LLC.
  */
-package ru.lionsoft.hellospring.web.model.catalog;
+package ru.lionsoft.hello.spring.web.model.catalog;
 
 import java.util.Collection;
-import ru.lionsoft.hellospring.web.model.entity.MusicItem;
+import ru.lionsoft.hello.spring.web.model.entity.MusicItem;
 
 /**
  *
